@@ -1,0 +1,9 @@
+{
+  "name": "MiguelPantigoosDemoCurso",
+  "version": "1.0.0",
+  "description": "Backend para la web mi_firts_website",
+  "main": "index.js",
+  "repository": "https://github.com/josmig/project-react-website",
+  "author": "Miguel Pantigoso",
+  "license": "UNLICENSED"
+}
