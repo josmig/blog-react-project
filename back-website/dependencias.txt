@@ -1,0 +1,21 @@
+
+- Dependencias
+    1. bcrypt-nodejs (yarn o npm)
+        -> para encriptar las contraseñas en la BD
+    
+    2. body-parser
+        -> para pasar informacion en el body en las peticiones HTTP al momento de utilizar express
+    
+    3. connect-multiparty 
+        -> middelware para subir img a nuestro servidor
+
+    4. express 
+        -> framework para back de nodejs
+    
+    5. jwt-simple
+        -> codificar y decodificar tokens etc..
+    6. moment
+        -> para fechas y horas
+
+    7. mongoose
+        -> ORM para mongoDB y Nodejs
