@@ -1,7 +1,7 @@
 import React from 'react';
 /* import './App.css'; */
 import './scss/index.scss';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 
 function App() {
 
@@ -9,8 +9,17 @@ function App() {
     <Router>
     <div className="app"> 
       <h1>Sistema de rutas basicas</h1>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/contact" component={Contact}/>
+
+      <Link to="/">Home</Link> 
+      <Link to="/contact">Contacto</Link> 
+      <Link to="/user">Usuario</Link> 
+
+      <Switch>{/*con esto navegamamos siempre y cuando se cumplan estas rutas (especialmente para el error 404) */}
+        <Route exact path="/" component={Home} />      
+        <Route exact path="/contact" component={Contact}/>
+        <Route exact path="/user" component={User} />
+        <Route component={Error404} />
+      </Switch>
     </div>
     </Router> 
   );
@@ -24,5 +33,8 @@ function Contact(){
 }
 function User(){
   return <h2>Estamos en el componente Users</h2>
+}
+function Error404(){
+  return <h2>Error 404...</h2>;
 }
 export default App;
