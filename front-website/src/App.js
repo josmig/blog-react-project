@@ -1,40 +1,21 @@
 import React from 'react';
-/* import './App.css'; */
 import './scss/index.scss';
-import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import Admin from './pages/Admin';
+import SignIn from './pages/Admin/Signin';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
 
 function App() {
 
   return (
-    <Router>
-    <div className="app"> 
-      <h1>Sistema de rutas basicas</h1>
-
-      <Link to="/">Home</Link> 
-      <Link to="/contact">Contacto</Link> 
-      <Link to="/user">Usuario</Link> 
-
-      <Switch>{/*con esto navegamamos siempre y cuando se cumplan estas rutas (especialmente para el error 404) */}
-        <Route exact path="/" component={Home} />      
-        <Route exact path="/contact" component={Contact}/>
-        <Route exact path="/user" component={User} />
-        <Route component={Error404} />
-      </Switch>
+    <div>
+      <h1>Estamos en app.js</h1>      
+      <Admin />
+      <SignIn />
+      <Home />
+      <Contact />
     </div>
-    </Router> 
   );
 }
-//componentes
-function Home(){
-  return <h2>Estamos en el componente home..</h2>
-}
-function Contact(){
-  return <h2>Componente contacto!!</h2>
-}
-function User(){
-  return <h2>Estamos en el componente Users</h2>
-}
-function Error404(){
-  return <h2>Error 404...</h2>;
-}
+
 export default App;
