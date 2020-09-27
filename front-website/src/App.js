@@ -1,20 +1,16 @@
 import React from 'react';
 import './scss/index.scss';
-import Admin from './pages/Admin';
-import SignIn from './pages/Admin/Signin';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import routes from './config/routes'
+import AdminHome from './pages/Admin'
 function App() {
 
   return (
-    <div>
-      <h1>Estamos en app.js</h1>      
-      <Admin />
-      <SignIn />
-      <Home />
-      <Contact />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/admin" exact="true" component={AdminHome}/>
+      </Switch>
+    </Router>
   );
 }
 
