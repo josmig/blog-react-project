@@ -1,12 +1,19 @@
 import React from 'react';
-import {Layout} from 'antd';
+import { Layout } from 'antd';
 
 export default function LayoutBasic(){
+    const {Header , Content , Footer} = Layout;
     return(
         <Layout>
-            <h2>Menu Siderbar</h2>
-            <div>Contenido...</div>
-            <h5>Footer</h5>
+            <Header>
+                
+            </Header>
+            <Content>
+
+            </Content>
+            <Footer>
+                <p>José Miguel Pantigoso Puraca &copy; 2020 </p>
+            </Footer>
         </Layout>
     );
 }

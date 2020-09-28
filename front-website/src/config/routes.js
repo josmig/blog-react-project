@@ -1,8 +1,16 @@
 //Layout importando
 import LayoutAdmin from '../layouts/LayoutAdmin';
+import LayoutBasic from '../layouts/LayoutBasic';
+
 //importando pages (le ponemos AdminHome porque lo expotamos como default)
+//Admin pages
 import AdminHome from '../pages/Admin';
 import AdminSingIn from '../pages/Admin/Signin';
+
+//Pages
+import Home from '../pages/Home';
+import Contact from '../pages/Contact';
+
 
 const routes = [
     {
@@ -17,8 +25,25 @@ const routes = [
             },
             {
                 path: "/admin/login",
-                component: AdminSingIn,
+                exact: true,
+                component: AdminSingIn
+            }
+        ]
+    },
+    {
+        path:"/",
+        component: LayoutBasic,
+        exact:false,
+        routes: [
+            {
+                path:"/",
+                component: Home,
                 exact: true
+            },
+            {
+                path:"/contact",
+                component: Contact,
+                exact:true
             }
         ]
     }
