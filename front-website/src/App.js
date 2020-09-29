@@ -19,7 +19,7 @@ function App() {
 //Componenet comienza con Mayuscula
 //funcion normal en minisucla
 function RouteWithSubRoutes(route){
-  console.log(route);
+  //console.log(route);
   return (
     <Route 
       path={route.path}
