@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from 'antd';
 
 //importando liberia para las rutas
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 //importando estilos
 import "./LayoutBasic.scss";
 
@@ -27,15 +27,19 @@ export default function LayoutBasic(props){
 
 function LoadRouter({routes}){
     console.log(routes);
-    return routes.map((route,index) => (
-        <Route            
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.component}
-            
-        />        
-    ));
+    return(
+        <Switch>
+            {routes.map((route,index) => (
+                <Route            
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.component}
+                    
+                />        
+            ))}
+        </Switch>
+    );
 }
 
 
