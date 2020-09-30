@@ -6,27 +6,27 @@ import {Layout} from "antd";
 //importando estilos del layout
 import "./LayoutAdmin.scss";
 //importando components /views
-import MenuTop from '../components/Admin/MenuTop'
+import MenuTop from '../components/Admin/MenuTop';
+import MenuSider from '../components/Admin/MenuSider';
 
 export default function LayoutAdmin(props){
     /* console.log(props); */
     //haciendo destructurin de Layout trayendo los demas components del layout
     const {Header,Content,Footer} = Layout; 
     //destructuracion trayendo solamente los routes de los props
-    const { routes}= props
+    const { routes }= props
 
     return(
         <Layout>
-            {/* TO DO: Menu Sider */}
+            <MenuSider />
             <Layout className="layout-admin">
-                <Header className="layout-admin__header">
-                    {/* TO DO: Menu top */}
+                <Header className="layout-admin__header">                    
                     <MenuTop />
                 </Header>
-                <Content className="layout_admin__content">
+                <Content className="layout-admin__content">
                     <LoadRouter routes={routes}/>
                 </Content>
-                <Footer className="layout_admin__footer">
+                <Footer className="layout-admin__footer">
                     José Miguel Pantigoso &copy; 2020
                 </Footer>
             </Layout>
