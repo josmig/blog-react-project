@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 //Importando el componente layout de la libreria antdesign
@@ -16,12 +16,16 @@ export default function LayoutAdmin(props){
     //destructuracion trayendo solamente los routes de los props
     const { routes }= props
 
+    //useState es un hook de react que trae funcionalidades para usar
+    const [menuCollapsed, setMenuCollapsed] = useState(false);
     return(
         <Layout>
-            <MenuSider />
-            <Layout className="layout-admin">
+            <MenuSider menuCollapsed={menuCollapsed} />
+            <Layout 
+                className="layout-admin" 
+                style={{marginLeft:menuCollapsed ? "80px" : "200px"}}>
                 <Header className="layout-admin__header">                    
-                    <MenuTop />
+                    <MenuTop menuCollapsed={menuCollapsed} setMenuCollapsed={setMenuCollapsed}/>
                 </Header>
                 <Content className="layout-admin__content">
                     <LoadRouter routes={routes}/>
