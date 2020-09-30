@@ -1,7 +1,12 @@
 import React from 'react';
-import {Layout} from "antd";
 import { Route, Switch } from 'react-router-dom';
+
+//Importando el componente layout de la libreria antdesign
+import {Layout} from "antd";
+//importando estilos del layout
 import "./LayoutAdmin.scss";
+//importando components /views
+import MenuTop from '../components/Admin/MenuTop'
 
 export default function LayoutAdmin(props){
     /* console.log(props); */
@@ -12,13 +17,16 @@ export default function LayoutAdmin(props){
 
     return(
         <Layout>
-            <h2>Menu Sider</h2>
-            <Layout>
-                <Header>Cabecera</Header>
-                <Content>
+            {/* TO DO: Menu Sider */}
+            <Layout className="layout-admin">
+                <Header className="layout-admin__header">
+                    {/* TO DO: Menu top */}
+                    <MenuTop />
+                </Header>
+                <Content className="layout_admin__content">
                     <LoadRouter routes={routes}/>
                 </Content>
-                <Footer>
+                <Footer className="layout_admin__footer">
                     José Miguel Pantigoso &copy; 2020
                 </Footer>
             </Layout>
